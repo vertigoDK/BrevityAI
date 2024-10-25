@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Brevity - Simplify Your Content</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% block css %}
+    
+    {% endblock css %}
+</head>
+<body class="page">
+
+    <header class="header">
+        <div class="header__container">
+            <a href="{% url "home" %}">
+                <h1 class="header__logo">Brevity</h1>
+            </a>
+            
+            <nav class="header__nav">
+
+                {% if user.is_staff %}
+                    <a href="{% url "admin:index" %}" class="header__link">admin panel</a>
+                {% endif %}
+                    <a href="{% url "summarizers" %}" class="header__link">All Summarizers</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}" class="header__link">Logout</a>
+                    <a href="{% url 'register' %}" class="header__link">Вы авторизовались как {{ user.username }}</a>
+                {% else %}
+                    <a href="{% url "login" %}" class="header__link">Login</a>
+                    <a href="{% url "register" %}" class="header__link">Register</a>
+                {% endif %}
+                
+            </nav>
+        </div>
+    </header>
+    
+    {% block content %}
+    
+    {% endblock content %}
+
+    <!-- Футер -->
+    <footer class="footer">
+        <p class="footer__text">© 2024 Brevity. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

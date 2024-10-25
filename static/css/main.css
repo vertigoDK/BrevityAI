@@ -1,0 +1,333 @@
+/* --- Основные стили страницы --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Хедер с кнопками и профилем --- */
+/* --- Хедер с кнопками и профилем --- */
+.header {
+    background-color: #1e3a57;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header__logo {
+    font-size: 2rem;
+    color: #ffffff;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-right: auto;  /* Логотип останется слева */
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto;  /* Элементы хедера сдвинем вправо */
+}
+
+.header__link {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #ff6b6b;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.header__link:hover {
+    background-color: #ff4b4b;
+}
+
+/* --- Профиль с выпадающим меню --- */
+.profile {
+    position: relative;
+    display: inline-block;
+}
+
+.profile__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.profile__menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.profile__item {
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.profile__item:hover {
+    background-color: #f0f0f0;
+}
+
+.profile:hover .profile__menu, .profile__menu:hover {
+    display: block;
+}
+
+/* --- Hero-секция --- */
+/* --- Hero-секция --- */
+/* --- Hero-секция --- */
+/* --- Hero-секция --- */
+/* --- Hero-секция с новым градиентом --- */
+.hero {
+    display: flex;
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center;     /* Центрируем по вертикали */
+    padding: 100px 50px;
+    height: 85vh; /* Высота секции */
+    background: linear-gradient(135deg, #f0f0f0, #c9d6ff); /* Мягкий градиент от светло-серого к нежно-голубому */
+}
+
+
+
+
+.hero__container {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение */
+    align-items: center;     /* Центрируем по горизонтали */
+    width: 100%;
+    max-width: 800px; /* Ограничиваем максимальную ширину */
+    text-align: center;
+}
+
+.hero__text {
+    max-width: 50%;
+}
+
+.hero__title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.hero__description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.hero__form {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение */
+    align-items: center;    /* Центрируем по горизонтали */
+    justify-content: center; /* Центрируем по вертикали */
+    width: 100%; /* Используем полную ширину контейнера */
+}
+
+.hero__input {
+    width: 70%;
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    opacity: 70%;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    outline: none;
+    transition: border-color 0.3s, height 0.3s;
+    height: 40px; /* Начальная высота, как у поисковика */
+    resize: none; /* Отключаем изменение размера */
+    overflow: hidden; /* Убираем прокрутку */
+}
+
+
+.hero__input:focus {
+    border-color: #1e90ff;
+    height: 300px; /* Увеличиваем высоту при фокусе/вводе текста */
+}
+
+/* --- Кнопки и раскрывающееся меню --- */
+.hero__actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.hero__button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.hero__button:hover {
+    background-color: #005cbf;
+    transform: scale(1.05);
+}
+
+.hero__dropdown {
+    position: relative;
+}
+
+.hero__dropdown-button {
+    background-color: transparent;
+    border: none;
+    color: #1e90ff;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 10px 20px;
+}
+
+.hero__dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.hero__dropdown-button:hover + .hero__dropdown-content,
+.hero__dropdown-content:hover {
+    display: block;
+}
+
+.hero__dropdown-content a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.hero__dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
+
+/* --- Футер --- */
+.footer {
+    background-color: #1e3a57;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+.footer__text {
+    margin: 0;
+}
+
+/* --- Адаптивные стили --- */
+@media (max-width: 768px) {
+    .hero__container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero__text {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .hero__form {
+        width: 100%;
+    }
+}
+/* --- Кнопка и выпадающее меню --- */
+.hero__dropdown {
+    position: relative;
+}
+
+/* --- Кнопка и выпадающее меню --- */
+.hero__dropdown {
+    position: relative;
+}
+
+.hero__dropdown-button {
+    border: none;
+    color: #1e90ff;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.hero__dropdown-button:hover {
+    color: #005cbf;
+}
+
+.hero__dropdown-content {
+    visibility: hidden; /* Скрываем элемент */
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
+    transform: translateY(-10px);
+    z-index: 10;
+    min-width: 180px;
+}
+
+/* Показываем контент при наведении */
+.hero__dropdown:hover .hero__dropdown-content {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0s;
+}
+
+.hero__dropdown-content a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.hero__dropdown-content a:hover {
+    background-color: #f0f0f0;
+    color: #1e90ff;
+}
+
+.hero__dropdown-content a i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}

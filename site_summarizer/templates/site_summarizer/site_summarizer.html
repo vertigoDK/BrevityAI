@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'site_summarizer/css/styles.css' %}">
+{% endblock css %}
+
+{% block content %}
+<div class="summarizer-container">
+    <h1>Link Summarizer</h1>
+    <p>Enter a link below to get a summary of the content.</p>
+
+    <form method="POST" action="{% url 'site-summarizer' %}">
+        {% csrf_token %}
+        <div class="input-group">
+            <input type="url" name="site_url" placeholder="Enter the link here..." required>
+            <button type="submit" class="btn-summarize">Summarize</button>
+        </div>
+    </form>
+
+    {% if summary %}
+    <div class="summary-result">
+        <h2>Summary:</h2>
+        <p>{{ summary }}</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+<section class="hero">
+    <div class="hero__container">
+        <div class="hero__text">
+            <h2 class="hero__title">Simplify Your Content</h2>
+            <p class="hero__description">AI-based summarization tool to make your content concise and impactful. Enter your text to get started.</p>
+        </div>
+        <form action="{% url "text-summarizer" %}" method="post" class="hero__form">
+            {% csrf_token %}
+            <textarea class="hero__input" name="text" placeholder="Enter your text here..." rows="10"></textarea>
+            <div class="hero__actions">
+                <button class="hero__button">Summarize</button>
+                <div class="hero__dropdown">
+                    <button class="hero__dropdown-button" id="wantMoreBtn">
+                        Want more? <i class="icon-arrow-down"></i>
+                    </button>
+                    <div class="hero__dropdown-content" id="dropdownContent">
+                        <a href="#"><i class="icon-doc"></i> Documentation</a>
+                        <a href="#"><i class="icon-settings"></i> Settings</a>
+                        <a href="#"><i class="icon-help"></i> Help</a>
+                    </div>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock content %}

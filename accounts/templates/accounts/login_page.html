@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div style="margin: 50px;">
+<form action="" method="post">
+    {% csrf_token %}
+    
+    <label for="id_login">Your login: </label>
+    <input id="id_login" type="text" name="login" value="{{ form.login.value|default:'' }}">
+
+    <label for="id_password">Your password: </label>
+    <input id="id_password" type="password" name="password" value="{{ form.password.value|default:'' }}">
+
+    <input type="submit" value="OK">
+</form>
+</div>
+{% if errors %}
+{{ errors }}
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
+{% endblock css %}
+
+{% block content %}
+<section class="summarizers-section">
+    <div class="container">
+        <h2 class="text-center">Summarizers List</h2>
+        <div class="row">
+            <!-- Card 1: Text Summarizer -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Text Summarizer</h5>
+                        <p class="card-text">Summarize any plain text and get concise information.</p>
+                        <a href="{% url 'text-summarizer' %}" class="btn btn-primary">Go to Text Summarizer</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2: Site Summarizer -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Site Summarizer</h5>
+                        <p class="card-text">Summarize website content by providing a URL.</p>
+                        <a href="{% url "site-summarizer" %}" class="btn btn-primary">Go to Site Summarizer</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3: YouTube Summarizer -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">YouTube Summarizer</h5>
+                        <p class="card-text">Summarize YouTube video content from its link.</p>
+                        <a href="#" class="btn btn-primary">Go to YouTube Summarizer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
