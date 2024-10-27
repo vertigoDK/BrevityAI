@@ -26,7 +26,7 @@
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/observerDK/brevity.git
+   git clone https://github.com/vertigoDK/BrevityAI.git
    ```
 
 2. **Install Dependencies**:
